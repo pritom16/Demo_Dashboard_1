@@ -1,3 +1,21 @@
+# Deployment
+
+This project uses GitHub Actions to build the site (Vite) and publish the `dist/` folder to GitHub Pages.
+
+How it works
+
+- Pushes to `main` trigger the `.github/workflows/deploy.yml` workflow.
+- The workflow runs `npm ci` and `npm run build`, then publishes `dist/` to GitHub Pages.
+
+Repository owner steps (one-time)
+
+1. In the repository Settings → Pages, confirm the Pages source if needed (the Actions workflow will create the `gh-pages` branch used by the action).
+2. Optionally enable Pages or check the site URL once the first deployment completes.
+
+Contributor notes
+
+- Submit PRs; merges to `main` will auto-deploy.
+- Forks cannot trigger deploys that use repository secrets.
 ---
 layout: default
 title: Deployment Guide
